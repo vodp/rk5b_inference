@@ -7,7 +7,9 @@ def main():
     parser = argparse.ArgumentParser('Convert ONNX model to RKNN runtime format, must run on x86_64')
     parser.add_argument('-i', '--inp_onnx', type=str, required=True, help='Input ONNX model')
     parser.add_argument('-o', '--out_rknn', type=str, required=True, help='Output RKNN model')
-    parser.add_argument('-f', '--dataset_file', type=str, default='models/cats.jpg')
+    parser.add_argument('-f', '--dataset_file', type=str, default='models/dataset.txt')
+
+    args = parser.parse_args()
 
     rknn = RKNN(verbose=True)
     
